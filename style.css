@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', 'Fraunces';
+}
+
+:root {
+    --Soft-red: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --graphic-design-text: hsl(167, 40%, 24%);
+    --photography-text: hsl(198, 62%, 26%);
+    --footer: hsl(168, 34%, 41%);
+
+    --Very-dark-desaturated-blue: hsl(211, 66%, 7%);
+    --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --Dark-grayish-blue: hsl(232, 10%, 55%);
+    --Grayish-blue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+}
+
+header {
+    position: relative;
+}
+
+nav {
+    padding: 2rem 1rem;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2rem);
+    top: 0;
+    left: 0;
+}
+
+button {
+    cursor: pointer;
+    width: fit-content;
+    background: none;
+    border: none;
+    justify-self: center;
+}
+
+.nav-list {
+    transition: all 250ms;
+    opacity: 0;
+    background: var(--White);
+    position: absolute;
+    bottom: -18rem;
+    z-index: 100;
+    width: 92%;
+    text-align: center;
+}
+
+.nav-list::before {
+    content: '';
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    height: 1.5rem;
+    width: 2rem;
+    background: var(--White);
+    position: absolute;
+    right: 0;
+    top: -1.5rem;
+}
+
+.nav-list ul {
+    display: grid;
+    gap: 2rem;
+    list-style: none;
+    padding: 1rem;
+}
+
+.nav-list ul li a {
+    color: var(--Grayish-blue);
+    text-decoration: none;
+}
+
+.nav-list ul li a:hover,
+.nav-list ul li a:focus-within {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.nav-list ul li:last-of-type {
+    background: var(--Yellow);
+    padding: 1rem;
+    justify-self: center;
+    width: fit-content;
+    border-radius: 10rem;
+    font-family: 'Fraunces';
+}
+
+.nav-list ul li:last-of-type:hover,
+.nav-list ul li:last-of-type:focus-within {
+    background: var(--photography-text);
+}
+
+.nav-list ul li:last-of-type a {
+    color: black;
+}
+
+.title {
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    color: var(--White);
+    text-transform: uppercase;
+    font-family: 'Fraunces';
+    font-size: 1.5rem;
+}
+
+.info-section {
+    display: grid;
+    text-align: center;
+}
+
+.grid-ctn {
+    display: grid;
+    position: relative;
+    gap: 1rem;
+    color: var(--Very-dark-desaturated-blue);
+}
+
+.grid-ctn:nth-of-type(2),
+.grid-ctn:nth-of-type(4) {
+    padding: 2rem;
+}
+
+.grid-ctn img {
+    height: 100%;
+}
+
+.grid-ctn h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'Fraunces';
+    font-weight: 900;
+}
+
+.grid-ctn p {
+    font-size: 1rem;
+    line-height: 1.1;
+    color: var(--Grayish-blue);
+}
+
+.grid-ctn button {
+    font-size: 1rem;
+    font-family: 'Fraunces';
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.grid-ctn button::after {
+    content: '';
+    width: 8rem;
+    height: .6rem;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.grid-ctn:nth-of-type(2) button::after {
+    background: hsl(51, 100%, 49%, .4);
+}
+
+.grid-ctn:nth-of-type(2) button:hover::after,
+.grid-ctn:nth-of-type(2) button:focus-within::after {
+    background: hsl(51, 100%, 49%);
+}
+
+.grid-ctn:nth-of-type(4) button::after {
+    background: hsl(7, 99%, 70%, .4);
+}
+
+.grid-ctn:nth-of-type(4) button:hover::after,
+.grid-ctn:nth-of-type(4) button:focus-within::after {
+    background: hsl(7, 99%, 70%);
+}
+
+.grid-ctn:nth-of-type(5),
+.grid-ctn:last-of-type {
+    height: fit-content;
+    position: relative;
+}
+
+.grid-ctn:nth-of-type(5) p {
+    color: var(--graphic-design-text);
+}
+
+.grid-ctn:last-of-type p {
+    color: var(--photography-text);
+}
+
+.grid-ctn:nth-of-type(5) img,
+.grid-ctn:last-of-type img {
+    z-index: -1;
+}
+
+.absolute-text {
+    position: absolute;
+    bottom: 0;
+    padding: 2rem 1rem;
+}
+
+.testimonials {
+    padding: 2rem;
+    gap: 2rem;
+    display: grid;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-family: 'Fraunces';
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--Dark-grayish-blue);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.grid {
+    place-items: center;
+    color: var(--Very-dark-grayish-blue);
+}
+
+.grid img {
+    border-radius: 50%;
+    width: 4rem;
+}
+
+.grid p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.grid p:last-of-type {
+    font-size: .8rem;
+    color: var(--Dark-grayish-blue);
+}
+
+.grid h3 {
+    font-family: 'Fraunces';
+    margin: 0;
+    color: var(--Very-dark-desaturated-blue);
+}
+
+footer {
+    background: #90d4c5;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.credits {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.credits img {
+    padding-block: 2rem;
+}
+
+.logo-footer {
+    filter: 
+        brightness(0) 
+        saturate(100%) 
+        invert(28%)
+        sepia(39%) 
+        saturate(497%) 
+        hue-rotate(116deg) 
+        brightness(93%) 
+        contrast(94%);
+}
+
+.credits ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 0;
+}
+
+.credits ul li a {
+    text-decoration: none;
+    color: var(--footer);
+}
+
+.credits ul li a:hover,
+.credits ul li a:focus-within {
+    color: var(--White);
+}
+
+.social-icons {
+    display: flex;
+    gap: 2rem;
+    padding-block: 3rem;
+}
+
+.social-icons img {
+    cursor: pointer;
+}
+
+.social-icons img:hover,
+.social-icons img:focus-within {
+    filter: brightness(0) 
+            saturate(100%) 
+            invert(100%) sepia(19%) 
+            saturate(17%) 
+            hue-rotate(241deg) 
+            brightness(103%) 
+            contrast(104%);
+}
+
+
+
+
+@media screen and (min-width: 375px) {
+    nav {
+        padding: 0;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .nav-list {
+        opacity: 1;
+        width: min-content;
+        top: 0;
+        right: 0;
+        background: none;
+        position: relative;
+    }
+
+    .nav-list::before {
+        display: none;
+    }
+
+    .nav-list ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .nav-list ul li a {
+        color: var(--White);
+    }
+
+    .nav-list ul li:last-of-type:hover,
+    .nav-list ul li:last-of-type:focus-within {
+        background: var(--Yellow);
+}
+
+    .nav-list ul li:last-of-type {
+        background: var(--White);
+        padding: .5rem 1rem;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .title {
+        top: 35%;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        gap: 8rem;
+    }
+
+    .info-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-ctn h2 {
+        font-size: 2.5rem;
+    }
+
+    .grid-ctn p {
+        font-size: 1.2rem;
+    }
+
+    .grid-ctn:nth-of-type(2) {
+        grid-row: 1 / 1;
+    }
+
+    .grid-ctn:nth-of-type(2),
+    .grid-ctn:nth-of-type(4) {
+        padding: 8rem;
+        text-align: start;
+    }
+
+    .grid-ctn:nth-of-type(2) button,
+    .grid-ctn:nth-of-type(4) button {
+        justify-self: start;
+    }
+
+    .grid-ctn button::after {
+        bottom: 0;
+    }
+
+    .grid-ctn:nth-of-type(5) p,
+    .grid-ctn:last-of-type p {
+        padding: 1rem 7rem;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .testimonials h2 {
+        grid-column: 1 / -1;
+        font-size: 1.5rem;
+    }
+
+    .testimonials {
+        padding: 10rem 2rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer {
+        font-size: 1.3rem;
+    }
+
+    .images {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
